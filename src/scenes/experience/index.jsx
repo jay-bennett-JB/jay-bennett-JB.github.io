@@ -16,8 +16,8 @@ const WorkExperience = () => {
       {/* Header */}
       <Box>
         <Header
-          title="Homepage"
-          subtitle="Welcome to my home page"
+          title="Work Experience"
+          subtitle="Please find a list of my work experience below"
         />
         {/* Accordion 1 - About Me  */}
         <Accordion defaultExpanded>

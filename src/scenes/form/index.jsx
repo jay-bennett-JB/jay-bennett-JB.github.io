@@ -7,7 +7,7 @@ import Header from "../../components/Header";
 
 //Inital Values for Form
 
-const InitalValues = {
+const InitialValues = {
   firstName: "",
   lastName: "",
   email: "",
@@ -20,7 +20,7 @@ const phoneRegExp =
   /^\+?(\d{1,3})?[-.\s]?(\(?\d{1,4}\)?)?[-.\s]?\d{1,4}[-.\s]?\d{1,9}$/;
 
 //User Schema
-const userSchema = yup.object.shape({
+const userSchema = yup.object().shape({
   firstName: yup.string().required("required"),
   lastName: yup.string().required("required"),
   email: yup.string().email("Ivalid Email").required("required"),
@@ -32,7 +32,7 @@ const userSchema = yup.object.shape({
 });
 
 //Form
-const Form = () => {
+const ContactForm = () => {
   const isNonMobile = useMediaQuery("(min-width:600px)");
 
   const handleFormSubmit = (values) => {
@@ -47,13 +47,13 @@ const Form = () => {
       />
       <Formik
         onSubmit={handleFormSubmit}
-        initialValues={initialValues}
+        initialValues={InitialValues}
         validationSchema={userSchema}
       >
         {({
           values,
-          initialErrors,
-          initialTouched,
+          errors,
+          touched,
           handleBlur,
           handleChange,
           handleSubmit,
@@ -76,8 +76,8 @@ const Form = () => {
                 onChange={handleChange}
                 value={values.firstName}
                 name="firstName"
-                error={!!touched.firstName && !!ErrorSharp.firstName}
-                helperText={touched.firstName && ErrorSharp.firstName}
+                error={!!touched.firstName && !!errors.firstName}
+                helperText={touched.firstName && errors.firstName}
                 sx={{ gridColumn: "span 2" }}
               />
               <TextField
@@ -89,8 +89,8 @@ const Form = () => {
                 onChange={handleChange}
                 value={values.lastName}
                 name="lastName"
-                error={!!touched.lastName && !!ErrorSharp.lastName}
-                helperText={touched.lastName && ErrorSharp.lastName}
+                error={!!touched.lastName && !!errors.lastName}
+                helperText={touched.lastName && errors.lastName}
                 sx={{ gridColumn: "span 2" }}
               />
               <TextField
@@ -102,9 +102,9 @@ const Form = () => {
                 onChange={handleChange}
                 value={values.email}
                 name="email"
-                error={!!touched.email && !!ErrorSharp.email}
-                helperText={touched.email && ErrorSharp.email}
-                sx={{ gridColumn: "span 2" }}
+                error={!!touched.email && !!errors.email}
+                helperText={touched.email && errors.email}
+                sx={{ gridColumn: "span 4" }}
               />
               <TextField
                 fullWidth
@@ -116,12 +116,12 @@ const Form = () => {
                 value={values.contactPreference}
                 name="firstName"
                 error={
-                  !!touched.contactPreference && !!ErrorSharp.contactPreference
+                  !!touched.contactPreference && !!errors.contactPreference
                 }
                 helperText={
-                  touched.contactPreference && ErrorSharp.contactPreference
+                  touched.contactPreference && errors.contactPreference
                 }
-                sx={{ gridColumn: "span 2" }}
+                sx={{ gridColumn: "span 4" }}
               />
             </Box>
             <Box
@@ -144,4 +144,4 @@ const Form = () => {
   );
 };
 
-export default Form;
+export default ContactForm;

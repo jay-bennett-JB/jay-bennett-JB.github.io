@@ -146,7 +146,7 @@ const Sidebar = () => {
             />
             <Item
               title="Contact Form"
-              to="/contact"
+              to="/form"
               icon={<ContactPageOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
