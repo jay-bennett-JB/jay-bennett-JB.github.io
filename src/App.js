@@ -4,6 +4,8 @@ import { CssBaseline, ThemeProvider } from "@mui/material";
 import HomePage from "./scenes/homepage";
 import Topbar from "./scenes/global/topbar";
 import Sidebar from "./scenes/global/sidebar";
+import ProjectsBox from "./scenes/projects";
+import Skills from "./scenes/skills";
 
 function App() {
   const [theme, colorMode] = useMode();
@@ -21,14 +23,14 @@ function App() {
                 path="/"
                 element={<HomePage />}
               />
-              {/* <Route
-                path="/"
-                element={<Projects />}
-              />  */}
-              {/* <Route
-                path="/"
+              <Route
+                path="/projects"
+                element={<ProjectsBox />}
+              />
+              <Route
+                path="/skills"
                 element={<Skills />}
-              />  */}
+              />
               {/* <Route
                 path="/"
                 element={<Work Experience />}
