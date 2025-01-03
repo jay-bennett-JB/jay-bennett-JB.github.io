@@ -1,4 +1,4 @@
-//Imports
+// Imports
 import { AccordionDetails, Box, Typography, useTheme } from "@mui/material";
 import { tokens } from "../../themes";
 import Header from "../../components/Header";
@@ -6,8 +6,8 @@ import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
-//HomePage Setup
-const HomePage = () => {
+// Work Experience Accordions
+const WorkExperience = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
@@ -26,11 +26,11 @@ const HomePage = () => {
               color={colors.greenAccent[500]}
               variant="h5"
             >
-              About Me
+              FNZ
             </Typography>
           </AccordionSummary>
           <AccordionDetails>
-            <Typography>About Me Insert</Typography>
+            <Typography>FNZ WE Insert</Typography>
           </AccordionDetails>
         </Accordion>
         <Accordion defaultExpanded>
@@ -39,11 +39,11 @@ const HomePage = () => {
               color={colors.greenAccent[500]}
               variant="h5"
             >
-              Future Plans
+              EE
             </Typography>
           </AccordionSummary>
           <AccordionDetails>
-            <Typography>Future Plans Insert</Typography>
+            <Typography>EE WE Insert</Typography>
           </AccordionDetails>
         </Accordion>
         <Accordion defaultExpanded>
@@ -52,11 +52,11 @@ const HomePage = () => {
               color={colors.greenAccent[500]}
               variant="h5"
             >
-              Hobbies
+              Tesco
             </Typography>
           </AccordionSummary>
           <AccordionDetails>
-            <Typography>Hobbies Insert</Typography>
+            <Typography>Tesco Insert</Typography>
           </AccordionDetails>
         </Accordion>
       </Box>
@@ -64,4 +64,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default WorkExperience;

@@ -6,6 +6,7 @@ import Topbar from "./scenes/global/topbar";
 import Sidebar from "./scenes/global/sidebar";
 import ProjectsBox from "./scenes/projects";
 import Skills from "./scenes/skills";
+import WorkExperience from "./scenes/experience";
 
 function App() {
   const [theme, colorMode] = useMode();
@@ -20,7 +21,7 @@ function App() {
             <Topbar />
             <Routes>
               <Route
-                path="/"
+                path="/homepage"
                 element={<HomePage />}
               />
               <Route
@@ -31,10 +32,10 @@ function App() {
                 path="/skills"
                 element={<Skills />}
               />
-              {/* <Route
+              <Route
                 path="/"
-                element={<Work Experience />}
-              />  */}
+                element={<WorkExperience />}
+              />
               {/* <Route
                 path="/"
                 element={<Contact Form />}

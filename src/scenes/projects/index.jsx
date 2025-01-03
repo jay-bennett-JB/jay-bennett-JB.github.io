@@ -1,7 +1,9 @@
+//Imports
 import { Box, useTheme } from "@mui/material";
 import { tokens } from "../../themes";
 import Header from "../../components/Header";
 
+//Projects Setup
 const ProjectsBox = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);

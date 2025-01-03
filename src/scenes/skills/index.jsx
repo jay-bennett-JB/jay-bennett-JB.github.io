@@ -1,3 +1,4 @@
+//Imports
 import { AccordionDetails, Box, Typography, useTheme } from "@mui/material";
 import { tokens } from "../../themes";
 import Header from "../../components/Header";
@@ -5,6 +6,7 @@ import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
+//Skills Setup
 const Skills = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
