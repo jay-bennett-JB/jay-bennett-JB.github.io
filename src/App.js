@@ -1,5 +1,5 @@
 import { ColorModeContext, useMode } from "./themes";
-import { Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import HomePage from "./scenes/homepage";
 import Topbar from "./scenes/global/topbar";
@@ -20,29 +20,31 @@ function App() {
           <Sidebar />
           <main className="content">
             <Topbar />
-            <Routes>
-              <Route
-                exact
-                path="/"
-                element={<HomePage />}
-              />
-              <Route
-                path="/projects"
-                element={<ProjectsBox />}
-              />
-              <Route
-                path="/skills"
-                element={<Skills />}
-              />
-              <Route
-                path="/experience"
-                element={<WorkExperience />}
-              />
-              <Route
-                path="/form"
-                element={<ContactForm />}
-              />
-            </Routes>
+            <Router>
+              <Routes>
+                <Route
+                  exact
+                  path="/"
+                  element={<HomePage />}
+                />
+                <Route
+                  path="/projects"
+                  element={<ProjectsBox />}
+                />
+                <Route
+                  path="/skills"
+                  element={<Skills />}
+                />
+                <Route
+                  path="/experience"
+                  element={<WorkExperience />}
+                />
+                <Route
+                  path="/form"
+                  element={<ContactForm />}
+                />
+              </Routes>
+            </Router>
           </main>
         </div>
       </ThemeProvider>
