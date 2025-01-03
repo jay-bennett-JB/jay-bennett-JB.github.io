@@ -1,6 +1,7 @@
 import { ColorModeContext, useMode } from "./themes";
 import { Routes, Route } from "react-router-dom";
 import { CssBaseline, ThemeProvider } from "@mui/material";
+import HomePage from "./scenes/homepage";
 import Topbar from "./scenes/global/topbar";
 import Sidebar from "./scenes/global/sidebar";
 
@@ -16,10 +17,10 @@ function App() {
           <main className="content">
             <Topbar />
             <Routes>
-              {/* <Route
+              <Route
                 path="/"
                 element={<HomePage />}
-              /> */}
+              />
               {/* <Route
                 path="/"
                 element={<Projects />}
