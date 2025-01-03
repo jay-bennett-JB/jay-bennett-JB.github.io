@@ -1,11 +1,4 @@
-import {
-  AccordionDetails,
-  Box,
-  Button,
-  IconButton,
-  Typography,
-  useTheme,
-} from "@mui/material";
+import { AccordionDetails, Box, Typography, useTheme } from "@mui/material";
 import { tokens } from "../../themes";
 import Header from "../../components/Header";
 import Accordion from "@mui/material/Accordion";
