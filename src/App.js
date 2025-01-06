@@ -20,7 +20,6 @@ function App() {
           <Sidebar />
           <main className="content">
             <Topbar />
-            <Router>
               <Routes>
                 <Route
                   exact
@@ -28,23 +27,22 @@ function App() {
                   element={<HomePage />}
                 />
                 <Route
-                  path="/projects"
+                  path="/projects/"
                   element={<ProjectsBox />}
                 />
                 <Route
-                  path="/skills"
+                  path="/skills/"
                   element={<Skills />}
                 />
                 <Route
-                  path="/experience"
+                  path="/experience/"
                   element={<WorkExperience />}
                 />
                 <Route
-                  path="/form"
+                  path="/form/"
                   element={<ContactForm />}
                 />
               </Routes>
-            </Router>
           </main>
         </div>
       </ThemeProvider>
