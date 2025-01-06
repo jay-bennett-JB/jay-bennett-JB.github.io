@@ -30,7 +30,12 @@ const HomePage = () => {
             </Typography>
           </AccordionSummary>
           <AccordionDetails>
-            <Typography>About Me Insert</Typography>
+            <Typography>My name is Jay, and I am a 32-year-old professional based in the United Kingdom, currently pursuing a Bachelor’s degree in Computing and IT. 
+                        My ultimate goal is to become a Software Engineer, contributing to innovative technologies and supporting organizational growth.
+                        With over 10 years of experience in customer service, administration, service management, and platform operations, I bring a unique blend of technical knowledge and practical skills. My recent role at a financial platform provider strengthened my expertise in data management, financial regulations, and change management, while my academic studies have provided a solid foundation in programming (Python, Java, HTML, CSS), network systems, and project management.
+                        To address gaps in practical experience, I am actively engaging in self-directed projects and studies to refine my skills and apply theoretical knowledge in real-world scenarios. 
+                        My problem-solving ability, adaptability, and hands-on experience in pension administration and contract management make me well-suited for IT roles and eager to tackle new challenges. 
+                        </Typography>
           </AccordionDetails>
         </Accordion>
         <Accordion defaultExpanded>
