@@ -36,7 +36,8 @@ const HomePage = () => {
               With over 10 years of experience in customer service, administration, service management, and platform operations, I bring a unique blend of technical knowledge and practical skills. 
               My recent role at a financial platform provider strengthened my expertise in data management, financial regulations, and change management, while my academic studies have provided a solid foundation in programming (Python, Java, HTML, CSS), network systems, and project management. <br />
               To address gaps in practical experience, I am actively engaging in self-directed projects and studies to refine my skills and apply theoretical knowledge in real-world scenarios. 
-              My problem-solving ability, adaptability, and hands-on experience in pension administration and contract management make me well-suited for IT roles and eager to tackle new challenges. 
+              My problem-solving ability, adaptability, and hands-on experience in pension administration and contract management make me well-suited for IT roles and eager to tackle new challenges. <br />
+              With this website, the connected projects and other personal project I am starting off with basic boilerplates and moving to improve them as I move forward.
             </Typography>
           </AccordionDetails>
         </Accordion>
