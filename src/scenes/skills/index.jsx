@@ -16,10 +16,10 @@ const Skills = () => {
       {/* Header */}
       <Box>
         <Header
-          title="Homepage"
-          subtitle="Welcome to my home page"
+          title="Skills"
+          subtitle="Please find a complete list of skills under appropriate sections"
         />
-        {/* Accordion 1 - About Me  */}
+        {/* Accordion for Skills */}
         <Accordion defaultExpanded>
           <AccordionSummary expandIcon={<ExpandMoreIcon />}>
             <Typography

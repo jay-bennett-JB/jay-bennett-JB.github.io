@@ -70,7 +70,7 @@ const Sidebar = () => {
                   variant="h3"
                   color={colors.grey[100]}
                 >
-                  React Static Webpages
+                  React Portfolio
                 </Typography>
                 <IconButton onClick={() => setIsCollapsed(!isCollapsed)}>
                   <MenuOutlinedIcon />
@@ -114,7 +114,7 @@ const Sidebar = () => {
               </Box>
             </Box>
           )}
-          {/* MEnu Items */}
+          {/* Menu Items */}
           <Box paddingLeft={isCollapsed ? undefined : "10%"}>
             <Item
               title="HomePage"

@@ -34,3 +34,9 @@ body,
 ::-webkit-scrollbar-track:hover {
   background: #555;
 }
+.typography-content {
+  white-space: normal;    /* Allow text to wrap */
+  word-wrap: break-word;  /* Break long words if necessary */
+  overflow-wrap: break-word;
+}
+
