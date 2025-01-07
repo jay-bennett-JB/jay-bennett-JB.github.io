@@ -51,9 +51,10 @@ const HomePage = () => {
           </AccordionSummary>
           <AccordionDetails>
             <Typography variant="body1"  sx={{whiteSpace: "normal", wordWrap: "break-word", overflowWrap: "break-word",}}>
-                        My journey is driven by a passion for learning and creating solutions that make a difference. In the short term, I am focused on completing my portfolio, building my expertise in programming languages, hardware, and software, and securing an entry-level position in IT to gain practical experience. <br />
-                        Over the medium term, my primary goal is to complete my university degree in Computing and IT, a significant milestone that will solidify my technical foundation and open new career opportunities. <br /> 
-                        Looking ahead, I aspire to become a software engineer specializing in backend development, particularly in the gaming and content creation industries, by bridging gaps in my knowledge of Machine Learning, Game Design, Data Analytics, and Network & Communications, I hope to support the development of innovative solutions that enhance user experiences and foster creativity.</Typography>
+              My journey is driven by a passion for learning and creating solutions that make a difference. In the short term, I am focused on completing my portfolio, building my expertise in programming languages, hardware, and software, and securing an entry-level position in IT to gain practical experience. <br />
+              Over the medium term, my primary goal is to complete my university degree in Computing and IT, a significant milestone that will solidify my technical foundation and open new career opportunities. <br /> 
+              Looking ahead, I aspire to become a software engineer specializing in backend development, particularly in the gaming and content creation industries, by bridging gaps in my knowledge of Machine Learning, Game Design, Data Analytics, and Network & Communications, I hope to support the development of innovative solutions that enhance user experiences and foster creativity.
+              </ Typography>
           </AccordionDetails>
         </Accordion>
         <Accordion defaultExpanded>
@@ -66,7 +67,10 @@ const HomePage = () => {
             </Typography>
           </AccordionSummary>
           <AccordionDetails>
-            <Typography>Hobbies Insert</Typography>
+            <Typography variant="body1"  sx={{whiteSpace: "normal", wordWrap: "break-word", overflowWrap: "break-word",}}>
+            In my spare time, I enjoy watching content creators on YouTube and Twitch, including Dr Lupo, Darkness429, PirateSoftware, Baddie, and many others. Whether I'm actively engaging in chat or simply having a live stream on in the background, I find these streams to be both a source of entertainment and a welcome distraction. <br /> 
+            I also enjoy playing video games across various genres, with my current top three being Warframe, Diablo IV, and Path of Exile (eagerly awaiting the opportunity to delve into the second). <br /> When taking time away from screens, I've recently discovered a passion for hobbies like Magic: The Gathering and Warhammer 40K, both of which I find deeply enjoyable. My long-term goal is to become more involved in the social aspects of gaming, whether through online communities or local gatherings.
+            </Typography>
           </AccordionDetails>
         </Accordion>
       </Box>
