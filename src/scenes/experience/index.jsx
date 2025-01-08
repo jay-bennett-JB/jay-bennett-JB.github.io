@@ -1,5 +1,12 @@
 // Imports
-import { AccordionDetails, Box, Typography, useTheme } from "@mui/material";
+import {
+  AccordionDetails,
+  Box,
+  Typography,
+  useTheme,
+  List,
+  ListItem,
+} from "@mui/material";
 import { tokens } from "../../themes";
 import Header from "../../components/Header";
 import Accordion from "@mui/material/Accordion";
@@ -19,7 +26,7 @@ const WorkExperience = () => {
           title="Work Experience"
           subtitle="Please find a list of my work experience below"
         />
-        {/* Accordion 1 - About Me  */}
+        {/* Accordion 1 - FNZ */}
         <Accordion defaultExpanded>
           <AccordionSummary expandIcon={<ExpandMoreIcon />}>
             <Typography
@@ -30,10 +37,26 @@ const WorkExperience = () => {
             </Typography>
           </AccordionSummary>
           <AccordionDetails>
-            <Typography>FNZ WE Insert</Typography>
+            <Typography>
+              Working within the pension administration department on a client
+              contract, my role involved daily operational tasks and performing
+              administrative duties on Self-Invested Personal Pensions. I also
+              contributed to the change management of processes where required
+              as the client's needs required adaption of processes involving
+              legislation and regulations from governing bodies. This also help
+              provide me with skills and knowledge in how a platform provider
+              works in addition to experience with pensions.
+            </Typography>
+            <List>
+              <ListItem>Pension Adminastration</ListItem>
+              <ListItem>Platform Operations and Change Management</ListItem>
+              <ListItem>Member and Client Communication</ListItem>
+              <ListItem>Data Protection and Governance</ListItem>
+            </List>
           </AccordionDetails>
         </Accordion>
-        <Accordion defaultExpanded>
+        {/* Accordion 2 - EE */}
+        <Accordion>
           <AccordionSummary expandIcon={<ExpandMoreIcon />}>
             <Typography
               color={colors.greenAccent[500]}
@@ -43,10 +66,58 @@ const WorkExperience = () => {
             </Typography>
           </AccordionSummary>
           <AccordionDetails>
-            <Typography>EE WE Insert</Typography>
+            <Typography
+              variant="h5"
+              color={colors.greenAccent[500]}
+            >
+              December 2021 to February 2023
+            </Typography>
+            <Typography>
+              Working with customers to find the best deal was at the forefront
+              of my roles. I helped manage customer accounts and diagnose any
+              issues with the account or device. I also undertook additional
+              training to gain the ability to use the phone customer line to
+              enable me to complete transactions over the phone. This helped me
+              meet key targets each month, especially during quiet store hours.
+            </Typography>
+            <List>
+              <ListItem>Contract Management</ListItem>
+              <ListItem>
+                Finanical and Account advice and managment (pertaining to
+                contracts and living expenses)
+              </ListItem>
+              <ListItem>
+                Mobile and home device maintenance including diagnostics
+              </ListItem>
+            </List>
           </AccordionDetails>
         </Accordion>
-        <Accordion defaultExpanded>
+        {/* Accordion 3 Gardner Garages */}
+        <Accordion>
+          <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+            <Typography
+              color={colors.greenAccent[500]}
+              variant="h5"
+            >
+              Gardner Garages
+            </Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            <Typography
+              variant="h5"
+              color={colors.greenAccent[500]}
+            >
+              July 2017 to March 2020
+            </Typography>
+            <Typography>
+              A small petrol station business with multiple sites and a large
+              turnover for in store products such as hot food, food made to
+              order and general grocery items.
+            </Typography>
+          </AccordionDetails>
+        </Accordion>
+        {/* Accordion 4  - Tesco */}
+        <Accordion>
           <AccordionSummary expandIcon={<ExpandMoreIcon />}>
             <Typography
               color={colors.greenAccent[500]}
@@ -56,7 +127,13 @@ const WorkExperience = () => {
             </Typography>
           </AccordionSummary>
           <AccordionDetails>
-            <Typography>Tesco Insert</Typography>
+            <Typography
+              variant="h5"
+              color={colors.greenAccent[500]}
+            >
+              November 2012 to July 2017
+            </Typography>
+            <Typography>Supermarket.</Typography>
           </AccordionDetails>
         </Accordion>
       </Box>
