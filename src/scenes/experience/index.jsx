@@ -37,6 +37,12 @@ const WorkExperience = () => {
             </Typography>
           </AccordionSummary>
           <AccordionDetails>
+            <Typography
+              variant="h5"
+              color={colors.greenAccent[500]}
+            >
+              March 2023 - September 2024
+            </Typography>
             <Typography>
               Working within the pension administration department on a client
               contract, my role involved daily operational tasks and performing
@@ -109,17 +115,6 @@ const WorkExperience = () => {
             >
               July 2017 to March 2020
             </Typography>
-            <List>
-              <ListItem>Cash and Office Administration management</ListItem>
-              <ListItem>
-                Managing and training all staff in adherence with new policy and
-                procedure
-              </ListItem>
-              <ListItem>
-                Stock management - ordering and receieving deliveries
-              </ListItem>
-              <ListItem>Promoted to Assistant Manager in 2020</ListItem>
-            </List>
             <Typography>
               A small petrol station business with multiple sites and a large
               turnover for in store products such as hot food, food made to
@@ -131,6 +126,17 @@ const WorkExperience = () => {
               offered were managed safely whilst minimizing disruption to
               customers.
             </Typography>
+            <List>
+              <ListItem>Cash and Office Administration management</ListItem>
+              <ListItem>
+                Managing and training all staff in adherence with new policy and
+                procedure
+              </ListItem>
+              <ListItem>
+                Stock management - ordering and receieving deliveries
+              </ListItem>
+              <ListItem>Promoted to Assistant Manager in 2020</ListItem>
+            </List>
           </AccordionDetails>
         </Accordion>
         {/* Accordion 4  - Tesco */}
