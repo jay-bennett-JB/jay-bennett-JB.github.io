@@ -27,7 +27,7 @@ const WorkExperience = () => {
           subtitle="Please find a list of my work experience below"
         />
         {/* Accordion 1 - FNZ */}
-        <Accordion defaultExpanded>
+        <Accordion>
           <AccordionSummary expandIcon={<ExpandMoreIcon />}>
             <Typography
               color={colors.greenAccent[500]}
@@ -109,10 +109,27 @@ const WorkExperience = () => {
             >
               July 2017 to March 2020
             </Typography>
+            <List>
+              <ListItem>Cash and Office Administration management</ListItem>
+              <ListItem>
+                Managing and training all staff in adherence with new policy and
+                procedure
+              </ListItem>
+              <ListItem>
+                Stock management - ordering and receieving deliveries
+              </ListItem>
+              <ListItem>Promoted to Assistant Manager in 2020</ListItem>
+            </List>
             <Typography>
               A small petrol station business with multiple sites and a large
               turnover for in store products such as hot food, food made to
-              order and general grocery items.
+              order and general grocery items. <br />
+              Oversaw a store refit under new management and kept the store open
+              with little disruption to customers and staff as possible. Before
+              opening I ensured the staff training was up to date, new products
+              were displayed for customers and that all new services being
+              offered were managed safely whilst minimizing disruption to
+              customers.
             </Typography>
           </AccordionDetails>
         </Accordion>
@@ -133,7 +150,18 @@ const WorkExperience = () => {
             >
               November 2012 to July 2017
             </Typography>
-            <Typography>Supermarket.</Typography>
+            <List>
+              <ListItem>
+                Managing stock levels and operation of petrol station
+              </ListItem>
+              <ListItem>Staff administration</ListItem>
+              <ListItem>Safe and Legal administration</ListItem>
+            </List>
+            <Typography>
+              Seconded to management role due to manager absence. Undertook all
+              management responsibilities and duties, including overseeing
+              colleagues and ensuring all legal entitlements were complied with.
+            </Typography>
           </AccordionDetails>
         </Accordion>
       </Box>
