@@ -7,7 +7,7 @@ import Sidebar from "./scenes/global/sidebar";
 import ProjectsBox from "./scenes/projects";
 import Skills from "./scenes/skills";
 import WorkExperience from "./scenes/experience";
-import ContactForm from "./scenes/form";
+import ContactPage from "./scenes/form";
 
 function App() {
   const [theme, colorMode] = useMode();
@@ -20,29 +20,29 @@ function App() {
           <Sidebar />
           <main className="content">
             <Topbar />
-              <Routes>
-                <Route
-                  exact
-                  path="/"
-                  element={<HomePage />}
-                />
-                <Route
-                  path="/projects/"
-                  element={<ProjectsBox />}
-                />
-                <Route
-                  path="/skills/"
-                  element={<Skills />}
-                />
-                <Route
-                  path="/experience/"
-                  element={<WorkExperience />}
-                />
-                <Route
-                  path="/form/"
-                  element={<ContactForm />}
-                />
-              </Routes>
+            <Routes>
+              <Route
+                exact
+                path="/"
+                element={<HomePage />}
+              />
+              <Route
+                path="/projects/"
+                element={<ProjectsBox />}
+              />
+              <Route
+                path="/skills/"
+                element={<Skills />}
+              />
+              <Route
+                path="/experience/"
+                element={<WorkExperience />}
+              />
+              <Route
+                path="/form/"
+                element={<ContactPage />}
+              />
+            </Routes>
           </main>
         </div>
       </ThemeProvider>

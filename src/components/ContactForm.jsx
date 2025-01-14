@@ -1,9 +1,8 @@
 //Import
-import { Box, Button, TextField } from "@mui/material";
+import { Box, Button, TextField, Typography } from "@mui/material";
 import { Formik } from "formik";
 import * as yup from "yup";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import Header from "../../components/Header";
 
 //Inital Values for Form
 
@@ -18,6 +17,9 @@ const InitialValues = {
 //Phone Regex
 const phoneRegExp =
   /^\+?(\d{1,3})?[-.\s]?(\(?\d{1,4}\)?)?[-.\s]?\d{1,4}[-.\s]?\d{1,9}$/;
+  
+// FormSpree URL
+const FORMSPREE_URL = "https://formspree.io/f/myzzojdv";
 
 //User Schema
 const userSchema = yup.object().shape({
@@ -35,16 +37,36 @@ const userSchema = yup.object().shape({
 const ContactForm = () => {
   const isNonMobile = useMediaQuery("(min-width:600px)");
 
-  const handleFormSubmit = (values) => {
-    console.log(values);
+  const handleFormSubmit = async (values, { setSubmitting, resetForm }) => {
+    try {
+      const response = await fetch(FORMSPREE_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(values),
+      });
+      if (response.ok) {
+        // Show success on submit
+        alert("Message was sent successfully");
+        resetForm();
+      } else {
+        //Handle Errors
+        alert("Something went wrong, please try again!!");
+      }
+    } catch (error) {
+      console.error("Error: ", error);
+      alert("Error submitting form.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
     <Box m="20px">
-      <Header
-        title="Contact Form"
-        subtitle="Please use form to send a contact request"
-      />
+      {/* Contact Information Box */}
+      <Box m="20px">
+        <Typography variant="h6">Contact Information</Typography>
+        <Typography> Email: Jaydbennett92@gmail.com </Typography>
+      </Box>
       <Formik
         onSubmit={handleFormSubmit}
         initialValues={InitialValues}
@@ -57,6 +79,7 @@ const ContactForm = () => {
           handleBlur,
           handleChange,
           handleSubmit,
+          isSubmitting,
         }) => (
           <form onSubmit={handleSubmit}>
             <Box
@@ -84,7 +107,7 @@ const ContactForm = () => {
                 fullWidth
                 variant="filled"
                 type="text"
-                label="Last NAme"
+                label="Last Name"
                 onBlur={handleBlur}
                 onChange={handleChange}
                 value={values.lastName}
@@ -133,8 +156,9 @@ const ContactForm = () => {
                 type="submit"
                 color="secondary"
                 variant="contained"
+                disabled={isSubmitting}
               >
-                Submit Contact Details
+                {isSubmitting ? "Sending..." : "Submit"}
               </Button>
             </Box>
           </form>
