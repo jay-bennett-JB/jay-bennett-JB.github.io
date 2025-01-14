@@ -17,7 +17,7 @@ const InitialValues = {
 //Phone Regex
 const phoneRegExp =
   /^\+?(\d{1,3})?[-.\s]?(\(?\d{1,4}\)?)?[-.\s]?\d{1,4}[-.\s]?\d{1,9}$/;
-  
+
 // FormSpree URL
 const FORMSPREE_URL = "https://formspree.io/f/myzzojdv";
 
@@ -29,7 +29,7 @@ const userSchema = yup.object().shape({
   contact: yup
     .string()
     .matches(phoneRegExp, "Phone Number is required")
-    .required("required"),
+    .required("Phone is required"),
   contactPreference: yup.string().required("required"),
 });
 
@@ -38,6 +38,7 @@ const ContactForm = () => {
   const isNonMobile = useMediaQuery("(min-width:600px)");
 
   const handleFormSubmit = async (values, { setSubmitting, resetForm }) => {
+    console.log("Submitting Values: ", values);
     try {
       const response = await fetch(FORMSPREE_URL, {
         method: "POST",
@@ -68,9 +69,12 @@ const ContactForm = () => {
         <Typography> Email: Jaydbennett92@gmail.com </Typography>
       </Box>
       <Formik
-        onSubmit={handleFormSubmit}
         initialValues={InitialValues}
         validationSchema={userSchema}
+        onSubmit={(values, actions) => {
+          console.log("formik on submit test", values);
+          handleFormSubmit(values, actions);
+        }}
       >
         {({
           values,
@@ -81,7 +85,7 @@ const ContactForm = () => {
           handleSubmit,
           isSubmitting,
         }) => (
-          <form onSubmit={handleSubmit}>
+          <form>
             <Box
               display="grid"
               gap="30px"
@@ -137,7 +141,7 @@ const ContactForm = () => {
                 onBlur={handleBlur}
                 onChange={handleChange}
                 value={values.contactPreference}
-                name="firstName"
+                name="contactPreference"
                 error={
                   !!touched.contactPreference && !!errors.contactPreference
                 }
@@ -157,6 +161,7 @@ const ContactForm = () => {
                 color="secondary"
                 variant="contained"
                 disabled={isSubmitting}
+                onClick={() => console.log("Button has been clicked")}
               >
                 {isSubmitting ? "Sending..." : "Submit"}
               </Button>

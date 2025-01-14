@@ -45,11 +45,10 @@ const HomePage = () => {
               United Kingdom, currently pursuing a Bachelor's degree in
               Computing and IT. <br />
               My ultimate goal is to become a Software Engineer, contributing to
-              innovative technologies and supporting organizational growth.{" "}
-              <br />
-              With over 10 years of experience in customer service,
-              administration, service management, and platform operations, I
-              bring a unique blend of technical knowledge and practical skills.
+              innovative technologies and supporting organizational growth. With
+              over 10 years of experience in customer service, administration,
+              service management, and platform operations, I bring a unique
+              blend of technical knowledge and practical skills. <br />
               My recent role at a financial platform provider strengthened my
               expertise in data management, financial regulations, and change
               management, while my academic studies have provided a solid
@@ -60,10 +59,10 @@ const HomePage = () => {
               theoretical knowledge in real-world scenarios. My problem-solving
               ability, adaptability, and hands-on experience in pension
               administration and contract management make me well-suited for IT
-              roles and eager to tackle new challenges. <br />
-              With this website, the connected projects and other personal
-              project I am starting off with basic boilerplates and moving to
-              improve them as I move forward.
+              roles and eager to tackle new challenges. With this website, the
+              connected projects and other personal project I am starting off
+              with basic boilerplates and moving to improve them as I move
+              forward.
             </Typography>
           </AccordionDetails>
         </Accordion>
