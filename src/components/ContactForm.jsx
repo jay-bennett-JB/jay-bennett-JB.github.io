@@ -3,6 +3,7 @@ import { Box, Button, TextField, Typography } from "@mui/material";
 import { Formik } from "formik";
 import * as yup from "yup";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import { useForm } from "@formspree/react";
 
 //Inital Values for Form
 
@@ -17,9 +18,6 @@ const InitialValues = {
 //Phone Regex
 const phoneRegExp =
   /^\+?(\d{1,3})?[-.\s]?(\(?\d{1,4}\)?)?[-.\s]?\d{1,4}[-.\s]?\d{1,9}$/;
-
-// FormSpree URL
-const FORMSPREE_URL = "https://formspree.io/f/myzzojdv";
 
 //User Schema
 const userSchema = yup.object().shape({
@@ -37,29 +35,10 @@ const userSchema = yup.object().shape({
 const ContactForm = () => {
   const isNonMobile = useMediaQuery("(min-width:600px)");
 
-  const handleFormSubmit = async (values, { setSubmitting, resetForm }) => {
-    console.log("Submitting Values: ", values);
-    try {
-      const response = await fetch(FORMSPREE_URL, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(values),
-      });
-      if (response.ok) {
-        // Show success on submit
-        alert("Message was sent successfully");
-        resetForm();
-      } else {
-        //Handle Errors
-        alert("Something went wrong, please try again!!");
-      }
-    } catch (error) {
-      console.error("Error: ", error);
-      alert("Error submitting form.");
-    } finally {
-      setSubmitting(false);
-    }
-  };
+  const [state, handleSubmit] = useForm("myzzojdv");
+  if (state.succeeded) {
+    return <Typography>Thanks for Joining</Typography>;
+  }
 
   return (
     <Box m="20px">
@@ -73,19 +52,15 @@ const ContactForm = () => {
         validationSchema={userSchema}
         onSubmit={(values, actions) => {
           console.log("formik on submit test", values);
-          handleFormSubmit(values, actions);
+          handleSubmit(values).then(() => {
+            actions.setSubmitting(false);
+          });
+          //preventing default form submission
+          actions.setSubmitting(false);
         }}
       >
-        {({
-          values,
-          errors,
-          touched,
-          handleBlur,
-          handleChange,
-          handleSubmit,
-          isSubmitting,
-        }) => (
-          <form>
+        {({ values, errors, touched, handleBlur, handleChange }) => (
+          <form onSubmit={handleSubmit}>
             <Box
               display="grid"
               gap="30px"
@@ -160,10 +135,9 @@ const ContactForm = () => {
                 type="submit"
                 color="secondary"
                 variant="contained"
-                disabled={isSubmitting}
-                onClick={() => console.log("Button has been clicked")}
+                disabled={state.submitting}
               >
-                {isSubmitting ? "Sending..." : "Submit"}
+                Submit
               </Button>
             </Box>
           </form>

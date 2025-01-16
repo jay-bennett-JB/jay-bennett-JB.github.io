@@ -1,5 +1,5 @@
 //Imports
-import { Box, useTheme } from "@mui/material";
+import { Box, Typography, useTheme } from "@mui/material";
 import { tokens } from "../../themes";
 import Header from "../../components/Header";
 
@@ -16,6 +16,7 @@ const ProjectsBox = () => {
           title="Projects Page"
           subtitle="Projects to appear here"
         />
+        <Typography color={colors.greenAccent[500]}> </Typography>
       </Box>
     </Box>
   );
