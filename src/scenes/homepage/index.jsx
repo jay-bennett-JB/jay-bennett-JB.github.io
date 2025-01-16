@@ -20,10 +20,7 @@ const HomePage = () => {
           subtitle="Welcome to my home page"
         />
         {/* Accordion 1 - About Me  */}
-        <Accordion
-          defaultExpanded
-          width="10px"
-        >
+        <Accordion width="10px">
           <AccordionSummary expandIcon={<ExpandMoreIcon />}>
             <Typography
               color={colors.greenAccent[500]}
@@ -66,7 +63,8 @@ const HomePage = () => {
             </Typography>
           </AccordionDetails>
         </Accordion>
-        <Accordion defaultExpanded>
+        {/* Accordion 2 - Future Plans */}
+        <Accordion>
           <AccordionSummary expandIcon={<ExpandMoreIcon />}>
             <Typography
               color={colors.greenAccent[500]}
@@ -102,7 +100,8 @@ const HomePage = () => {
             </Typography>
           </AccordionDetails>
         </Accordion>
-        <Accordion defaultExpanded>
+        {/* Accordion 3 - Hobbies */}
+        <Accordion>
           <AccordionSummary expandIcon={<ExpandMoreIcon />}>
             <Typography
               color={colors.greenAccent[500]}

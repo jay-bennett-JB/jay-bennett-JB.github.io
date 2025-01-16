@@ -26,7 +26,7 @@ const Skills = () => {
           title="Skills"
           subtitle="Please find a complete list of skills under appropriate sections"
         />
-        {/* Accordion for Skills */}
+        {/* Accordion for Software Skills */}
         <Accordion>
           <AccordionSummary expandIcon={<ExpandMoreIcon />}>
             <Typography

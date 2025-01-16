@@ -1,10 +1,20 @@
 //Import
-import { Box, Button, TextField, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  InputAdornment,
+  TextField,
+  Typography,
+} from "@mui/material";
 import { Formik } from "formik";
 import * as yup from "yup";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useForm } from "@formspree/react";
 import ContactPreferences from "./ContactPreferencesBox";
+import AlternateEmailOutlinedIcon from "@mui/icons-material/AlternateEmailOutlined";
+import Person2OutlinedIcon from "@mui/icons-material/Person2Outlined";
+import PhoneCallbackOutlinedIcon from "@mui/icons-material/PhoneCallbackOutlined";
+import SuccessPage from "../scenes/form/success";
 
 //Inital Values for Form
 const formspreeID = process.env.REACT_APP_FORMSPREE_ID;
@@ -45,8 +55,12 @@ const ContactForm = () => {
 
   const [state, handleSubmit] = useForm(formspreeID);
   if (state.succeeded) {
-    // Change to maatch Success Page
-    return <Typography>Thanks for Joining</Typography>;
+    // Change to match Success Page
+    return (
+      <Box m="20px">
+        <SuccessPage />
+      </Box>
+    );
   }
 
   return (
@@ -78,8 +92,8 @@ const ContactForm = () => {
                 "& .div": { gridColumn: isNonMobile ? undefined : "span 4" },
               }}
             >
+              {/* First Name */}
               <TextField
-                fullWidth
                 variant="filled"
                 type="text"
                 label="First Name"
@@ -90,7 +104,17 @@ const ContactForm = () => {
                 error={!!touched.firstName && !!errors.firstName}
                 helperText={touched.firstName && errors.firstName}
                 sx={{ gridColumn: "span 2" }}
+                slotProps={{
+                  input: {
+                    startAdornment: (
+                      <InputAdornment position="start">
+                        <Person2OutlinedIcon />
+                      </InputAdornment>
+                    ),
+                  },
+                }}
               />
+              {/* Last Name */}
               <TextField
                 fullWidth
                 variant="filled"
@@ -103,7 +127,18 @@ const ContactForm = () => {
                 error={!!touched.lastName && !!errors.lastName}
                 helperText={touched.lastName && errors.lastName}
                 sx={{ gridColumn: "span 2" }}
+                slotProps={{
+                  input: {
+                    startAdornment: (
+                      <InputAdornment position="start">
+                        <Person2OutlinedIcon />
+                      </InputAdornment>
+                    ),
+                  },
+                }}
               />
+              {/* Email */}
+
               <TextField
                 fullWidth
                 variant="filled"
@@ -116,7 +151,17 @@ const ContactForm = () => {
                 error={!!touched.email && !!errors.email}
                 helperText={touched.email && errors.email}
                 sx={{ gridColumn: "span 4" }}
+                slotProps={{
+                  input: {
+                    startAdornment: (
+                      <InputAdornment position="start">
+                        <AlternateEmailOutlinedIcon />
+                      </InputAdornment>
+                    ),
+                  },
+                }}
               />
+              {/* Phone Number */}
               <TextField
                 fullWidth
                 variant="filled"
@@ -129,6 +174,15 @@ const ContactForm = () => {
                 error={!!touched.phoneNumber && !!errors.phoneNumber}
                 helperText={touched.phoneNumber && errors.phoneNumber}
                 sx={{ gridColumn: "span 4" }}
+                slotProps={{
+                  input: {
+                    startAdornment: (
+                      <InputAdornment position="start">
+                        <PhoneCallbackOutlinedIcon />
+                      </InputAdornment>
+                    ),
+                  },
+                }}
               />
               {/* Contact Preference CheckBoxes */}
               <ContactPreferences
