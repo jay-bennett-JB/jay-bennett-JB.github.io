@@ -4,15 +4,23 @@ import { Formik } from "formik";
 import * as yup from "yup";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useForm } from "@formspree/react";
+import ContactPreferences from "./ContactPreferencesBox";
 
 //Inital Values for Form
+const formspreeID = process.env.REACT_APP_FORMSPREE_ID;
 
 const InitialValues = {
   firstName: "",
   lastName: "",
   email: "",
-  contact: "",
-  contactPreference: "",
+  phoneNumber: "",
+  contactPreference: {
+    email: false,
+    call: false,
+    other: false,
+  },
+  timePreference: "",
+  message: "",
 };
 
 //Phone Regex
@@ -24,7 +32,7 @@ const userSchema = yup.object().shape({
   firstName: yup.string().required("required"),
   lastName: yup.string().required("required"),
   email: yup.string().email("Ivalid Email").required("required"),
-  contact: yup
+  phoneNumber: yup
     .string()
     .matches(phoneRegExp, "Phone Number is required")
     .required("Phone is required"),
@@ -35,8 +43,9 @@ const userSchema = yup.object().shape({
 const ContactForm = () => {
   const isNonMobile = useMediaQuery("(min-width:600px)");
 
-  const [state, handleSubmit] = useForm("myzzojdv");
+  const [state, handleSubmit] = useForm(formspreeID);
   if (state.succeeded) {
+    // Change to maatch Success Page
     return <Typography>Thanks for Joining</Typography>;
   }
 
@@ -112,18 +121,19 @@ const ContactForm = () => {
                 fullWidth
                 variant="filled"
                 type="text"
-                label="Contact Preference"
+                label="Phone Number"
                 onBlur={handleBlur}
                 onChange={handleChange}
-                value={values.contactPreference}
-                name="contactPreference"
-                error={
-                  !!touched.contactPreference && !!errors.contactPreference
-                }
-                helperText={
-                  touched.contactPreference && errors.contactPreference
-                }
+                value={values.phoneNumber}
+                name="phoneNum"
+                error={!!touched.phoneNumber && !!errors.phoneNumber}
+                helperText={touched.phoneNumber && errors.phoneNumber}
                 sx={{ gridColumn: "span 4" }}
+              />
+              {/* Contact Preference CheckBoxes */}
+              <ContactPreferences
+                contactPreference={values.contactPreference}
+                handleChange={handleChange}
               />
             </Box>
             <Box
