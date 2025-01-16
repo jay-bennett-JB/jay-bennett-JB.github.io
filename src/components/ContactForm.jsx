@@ -170,7 +170,7 @@ const ContactForm = () => {
                 onBlur={handleBlur}
                 onChange={handleChange}
                 value={values.phoneNumber}
-                name="phoneNum"
+                name="phoneNumber"
                 error={!!touched.phoneNumber && !!errors.phoneNumber}
                 helperText={touched.phoneNumber && errors.phoneNumber}
                 sx={{ gridColumn: "span 4" }}
