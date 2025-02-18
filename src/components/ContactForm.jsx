@@ -1,11 +1,5 @@
-//Import
-import {
-  Box,
-  Button,
-  InputAdornment,
-  TextField,
-  Typography,
-} from "@mui/material";
+//Imports
+import { Box, Button, InputAdornment, TextField, Typography } from "@mui/material";
 import { Formik } from "formik";
 import * as yup from "yup";
 import useMediaQuery from "@mui/material/useMediaQuery";
@@ -34,8 +28,7 @@ const InitialValues = {
 };
 
 //Phone Regex
-const phoneRegExp =
-  /^\+?(\d{1,3})?[-.\s]?(\(?\d{1,4}\)?)?[-.\s]?\d{1,4}[-.\s]?\d{1,9}$/;
+const phoneRegExp = /^\+?(\d{1,3})?[-.\s]?(\(?\d{1,4}\)?)?[-.\s]?\d{1,4}[-.\s]?\d{1,9}$/;
 
 //User Schema
 const userSchema = yup.object().shape({

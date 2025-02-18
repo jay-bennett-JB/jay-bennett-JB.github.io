@@ -1,22 +1,21 @@
 //Imports
-import { Box, Typography, useTheme } from "@mui/material";
-import { tokens } from "../../themes";
+import { Box } from "@mui/material";
 import Header from "../../components/Header";
+import CrudAppStoryBoard from "../../components/CrudAppPage";
 
 //Projects Setup
 const ProjectsBox = () => {
-  const theme = useTheme();
-  const colors = tokens(theme.palette.mode);
-
   return (
     <Box m="20px">
       {/* Header */}
       <Box>
         <Header
           title="Projects Page"
-          subtitle="Projects to appear here"
+          subtitle="Please see the projects below"
         />
-        <Typography color={colors.greenAccent[500]}> </Typography>
+      </Box>
+      <Box>
+        <CrudAppStoryBoard />
       </Box>
     </Box>
   );
